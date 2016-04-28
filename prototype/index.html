@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ACI-Inspector prototype</title>
+    <link rel="stylesheet" type="text/css" href="css/Neos.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+</head>
+<body class="neos neos-module neos-controls">
+
+<div class="neos-module-wrap">
+    <ul class="neos-breadcrumb">
+        <li>
+            <a data-neos-toggle="tooltip" data-placement="bottom" title="" href=""data-original-title=""><i class="icon-gears"></i> Administration</a>
+            <span class="neos-divider">/</span>
+        </li>
+        <li>
+            <a data-neos-toggle="tooltip" data-placement="bottom" class="active" title="" href="" data-original-title=""><i class="icon-group"></i> ACL-Inspector Prototype</a>
+        </li>
+    </ul>
+
+    <div class="neos-content neos-container-fluid">
+        <div class="neos-row-fluid">
+            <fieldset class="neos-span4">
+                <legend>Filter</legend>
+                <div class="neos-control-group">
+                    <label class="neos-control-label" for="path">By path</label>
+                    <div class="neos-controls neos-controls-row">
+                        <input class="neos-span8" id="path" style="width: 100%;" type="text" name="" value="" placeholder="/sites/neosio/">
+                    </div>
+                </div>
+
+                <div class="neos-row-fluid">
+                    <fieldset class="neos-span6">
+                        <div class="neos-control-group">
+                            <label class="neos-control-label" for="path">By nodetype</label>
+                            <div class="neos-controls neos-controls-row">
+                                <label for="" class="neos-checkbox"><input id="" type="checkbox" name="" value=""><span></span> TYPO3.Neos:Document</label> <br/>
+                                <label for="" class="neos-checkbox"><input id="" type="checkbox" name="" value=""><span></span> TYPO3.Neos:Content</label><br/>
+                                <label for="" class="neos-checkbox"><input id="" type="checkbox" name="" value=""><span></span> TYPO3.Neos:Chapter</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="neos-span6">
+                        <div class="neos-control-group">
+                            <div class="neos-controls neos-controls-row">
+                                <label>Language:</label>
+                                <select id="interfaceLanguage" name="">
+                                    <option value="">Please choose ...</option>
+                                    <option value="de" selected>Deutsch – German</option>
+                                    <option value="en">English – English</option>
+                                    <option value="da">Dansk – Danish</option>
+                                </select>
+                                <label>Another dimension:</label>
+                                <select id="interfaceLanguage" name="">
+                                    <option value="">Please choose ...</option>
+                                    <option value="en">English – English</option>
+                                    <option value="da">Dansk – Danish</option>
+                                    <option value="de">Deutsch – German</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+
+            </fieldset>
+            <fieldset class="neos-span7 neos-offset1">
+                <legend>Check ACL for</legend>
+                <div class="neos-row-fluid">
+                    <fieldset class="neos-span6">
+                        <div class="neos-control-group">
+                            <label class="neos-control-label" for="path">User</label>
+                            <div class="neos-controls neos-controls-row">
+                                <label for="" class="neos-checkbox"><input id="" type="checkbox" name="" value=""><span></span>
+                                    John Doe</label> <br/>
+                                <label for="" class="neos-checkbox"><input id="" type="checkbox" name="" value=""><span></span>
+                                    Demo User</label>
+                            </div>
+                            <br/>
+                            <div class="neos-control-group">
+                                <label class="neos-control-label">Roles</label>
+                                <div class="neos-controls">
+                                    <label for="roles-1" class="neos-checkbox">
+                                        <input id="roles-1" type="checkbox" name="moduleArguments[roleIdentifiers][]" value="TYPO3.Setup:SetupUser"><span></span>
+                                        SetupUser <span class="neos-help-inline">(TYPO3.Setup)</span>
+                                    </label>
+                                </div>
+                                <div class="neos-controls">
+                                    <label for="roles-2" class="neos-checkbox">
+                                        <input id="roles-2" type="checkbox" name="moduleArguments[roleIdentifiers][]" value="TYPO3.Neos:LivePublisher"><span></span>
+                                        LivePublisher <span class="neos-help-inline">(TYPO3.Neos)</span>
+                                    </label>
+                                </div>
+                                <div class="neos-controls">
+                                    <label for="roles-3" class="neos-checkbox">
+                                        <input id="roles-3" type="checkbox" name="moduleArguments[roleIdentifiers][]" value="TYPO3.Neos:RestrictedEditor"><span></span>
+                                        RestrictedEditor <span class="neos-help-inline">(TYPO3.Neos)</span>
+                                    </label>
+                                </div>
+                                <div class="neos-controls">
+                                    <label for="roles-4" class="neos-checkbox">
+                                        <input id="roles-4" type="checkbox" name="moduleArguments[roleIdentifiers][]" value="TYPO3.Neos:Editor"><span></span>
+                                        Editor <span class="neos-help-inline">(TYPO3.Neos)</span>
+                                    </label>
+                                </div>
+                                <div class="neos-controls">
+                                    <label for="roles-5" class="neos-checkbox">
+                                        <input id="roles-5" type="checkbox" name="moduleArguments[roleIdentifiers][]" value="TYPO3.Neos:Administrator" checked="checked"><span></span>
+                                        Administrator <span class="neos-help-inline">(TYPO3.Neos)</span>
+                                    </label>
+                                </div>
+                                <div class="neos-controls">
+                                    <label for="roles-6" class="neos-checkbox">
+                                        <input id="roles-6" type="checkbox" name="moduleArguments[roleIdentifiers][]" value="Flowpack.Neos.FrontendLogin:User"><span></span>
+                                        User <span class="neos-help-inline">(Flowpack.Neos.FrontendLogin)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        </fieldset>
+                        <fieldset class="neos-span6">
+                            <div class="neos-control-group">
+                                <label class="neos-control-label">Show votes for privilege target</label>
+                                <div class="neos-controls">
+                                    <label for="target-1" class="neos-checkbox">
+                                        <input id="target-1" type="checkbox" name="moduleArguments[roleIdentifiers][]" value="" checked><span></span>
+                                        TYPO3.Neos:EditNodes <span class="neos-help-inline">(EditNodePrivilege)</span>
+                                    </label>
+                                </div>
+                                <div class="neos-controls">
+                                    <label for="roles-2" class="neos-checkbox">
+                                        <input id="target-2" type="checkbox" name="moduleArguments[roleIdentifiers][]" value="" checked><span></span>
+                                        TYPO3.Neos:CreateNodes <span class="neos-help-inline">(CreateNodePrivileges)</span>
+                                    </label>
+                                </div>
+                                <div class="neos-controls">
+                                    <label for="target-2" class="neos-checkbox">
+                                        <input id="target-2" type="checkbox" name="moduleArguments[roleIdentifiers][]" value="TYPO3.Neos:LivePublisher"><span></span>
+                                        TYPO3.Neos:Backend.ShowNodeTree <span class="neos-help-inline">(NodeTreePrivilege)</span>
+                                    </label>
+                                </div>
+                            </div>
+                    </fieldset>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="neos-row-fluid">
+            <button class="neos-button neos-button-success neos-pull-right">Check ACL</button>
+        </div>
+    </div>
+
+
+    <legend>ACL</legend>
+    <div class="neos-content neos-container-fluid">
+
+        <table class="neos-table">
+            <thead>
+            <tr>
+                <th>Path</th>
+                <th>Nodetype</th>
+                <th><i class="icon-white icon-sitemap"></i></th>
+                <th><i class="icon-white icon-eye-open"></i> </th>
+                <th><i class="icon-white icon-pencil"></i> </th>
+                <th><i class="icon-white icon-plus"></i></th>
+                <th>Privilege Targets (Grant, Abstain, Deny)</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <td><span>/sites</span></td>
+                <td><span class="neos-label">unstructured</span></td>
+                <td><i class="icon-green icon-check"></i></td>
+                <td><i class="icon-green icon-check"></i> </td>
+                <td><i class="icon-green icon-check"></i> </td>
+                <td><i class="icon-red icon-times"></i> </td>
+                <td>
+                    <ul>
+                        <li>TYPO3.Neos:EditNodes (1, 0, 0)</li>
+                        <li>TYPO3.Neos:CreateNodes  (0, 0, 1)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><span>/sites/neosdemotypo3org</span></td>
+                <td><span class="neos-label">TYPO3.NeosDemoTypo3Org:Homepage</span></td>
+                <td><i class="icon-green icon-check"></i></td>
+                <td><i class="icon-green icon-check"></i> </td>
+                <td><i class="icon-green icon-check"></i> </td>
+                <td><i class="icon-red icon-times"></i> </td>
+                <td>
+                    <ul>
+                        <li>TYPO3.Neos:EditNodes (1, 0, 0)</li>
+                        <li>TYPO3.Neos:CreateNodes  (0, 0, 1)</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td><span>/sites/neosdemotypo3org/download</span></td>
+                <td><span class="neos-label">TYPO3.Neos.NodeTypes:Page</span></td>
+                <td><i class="icon-green icon-check"></i></td>
+                <td><i class="icon-green icon-check"></i> </td>
+                <td><i class="icon-green icon-check"></i> </td>
+                <td><i class="icon-red icon-times"></i> </td>
+                <td>
+                    <ul>
+                        <li>TYPO3.Neos:EditNodes (1, 0, 0)</li>
+                        <li>TYPO3.Neos:CreateNodes  (0, 0, 1)</li>
+                    </ul>
+                </td>
+            </tr>
+
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+
+</body>
+</html>
